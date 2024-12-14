@@ -23,11 +23,15 @@ jobs:
 
       - name: Upgrade Flutter
         run: flutter upgrade
-        working-directory: ./flutter  
+        working-directory: ./flutter
 
       - name: Install dependencies
         run: flutter pub get
         working-directory: ./flutter  
+
+      - name: Run Flutter doctor
+        run: flutter doctor
+        working-directory: ./flutter
 
       - name: Run tests
         run: flutter test
@@ -43,4 +47,4 @@ jobs:
 
       - name: Debug Flutter version
         run: flutter --version
-        working-directory: ./flutter  
+        working-directory: ./flutter
