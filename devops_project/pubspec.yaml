@@ -1,12 +1,13 @@
-name: flutter
+name: devops_project
 description: A new Flutter project.
+publish_to: 'none'
 version: 0.1.0
 
 environment:
   sdk: '>=3.1.5 <4.0.0'
 
 dependencies:
-  provider: ^6.0.0
+  provider: 6.0.0
 
 dev_dependencies:
   flutter_test:
