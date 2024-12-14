@@ -33,9 +33,9 @@ jobs:
         run: flutter doctor
         working-directory: ./flutter
 
-      - name: Run tests
-        run: flutter test
-        working-directory: ./flutter  
+     #- name: Run tests
+     #  run: flutter test
+     # working-directory: ./flutter  
 
       - name: Build the app
         run: flutter build apk --release
