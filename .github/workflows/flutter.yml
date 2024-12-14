@@ -1,4 +1,4 @@
-name: devops_project CI
+name: Flutter CI
 
 on:
   push:
@@ -16,35 +16,35 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up devops_project
-        uses: subosito/devops_project-action@v2
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
         with:
-          devops_project-version: '3.10.0'
+          flutter-version: '3.10.0'
 
-      - name: Upgrade devops_project
-        run: devops_project upgrade
+      - name: Upgrade Flutter
+        run: flutter upgrade
         working-directory: ./devops_project
 
       - name: Install dependencies
-        run: devops_project pub get
+        run: flutter pub get
         working-directory: ./devops_project  
 
-      - name: Run devops_project doctor
-        run: devops_project doctor
+      - name: Run Flutter doctor
+        run: flutter doctor
         working-directory: ./devops_project
 
      #- name: Run tests
-     #  run: devops_project test
+     #  run: flutter test
      # working-directory: ./devops_project  
 
       - name: Build the app
-        run: devops_project build apk --release
+        run: flutter build apk --release
         working-directory: ./devops_project  
 
-      - name: Clear devops_project cache
-        run: devops_project doctor --android-licenses
+      - name: Clear Flutter cache
+        run: flutter doctor --android-licenses
         working-directory: ./devops_project  
 
-      - name: Debug devops_project version
-        run: devops_project --version
+      - name: Debug Flutter version
+        run: flutter --version
         working-directory: ./devops_project
