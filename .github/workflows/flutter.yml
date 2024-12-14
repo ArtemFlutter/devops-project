@@ -21,6 +21,10 @@ jobs:
         with:
           flutter-version: '3.10.0'
 
+      - name: Upgrade Flutter
+        run: flutter upgrade
+        working-directory: ./flutter  
+
       - name: Install dependencies
         run: flutter pub get
         working-directory: ./flutter  
